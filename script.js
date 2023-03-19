@@ -15,9 +15,14 @@ for(var i=0; i<btns.length; i++){
             displays.innerText='';//to clear the screen or displays.textContent='';
         }
         else if(value=='-'){
-            operator = '-';
-            operand1 = parseFloat(displays.innerText);
-            displays.innerText='';
+            if(displays.innerText==""){
+                displays.textContent += value;
+            }
+            else{
+                operator = '-';
+                operand1 = parseFloat(displays.innerText);
+                displays.innerText='';
+            }
         }
         else if(value=='*'){
             operator = '*';
